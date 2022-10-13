@@ -7,4 +7,4 @@
 
 Console.WriteLine("Введите трёхзначное число: "); 
 int a = Convert.ToInt32(Console.ReadLine()); 
-Console.WriteLine($"Последняя цифра числа: {a % 10}"); 
+Console.WriteLine($"Последняя цифра числа: {a % 10}"); // используем деление с остатком

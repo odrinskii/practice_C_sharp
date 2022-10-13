@@ -9,7 +9,8 @@ int day = Convert.ToInt32(Console.ReadLine());
 if (day > 0 && day < 8)
 {
     if (day == 1) ConsoleWrite("Понедельник");
-    else if (day == 2) ConsoleWrite("Вторник");
+    else if (day == 2) ConsoleWrite("Вторник"); 
+    // используем else if для того, чтобы программа не проверяла дальше в случае выполнения условия
     else if (day == 3) ConsoleWrite("Среда");
     else if (day == 4) ConsoleWrite("Четверг");
     else if (day == 5) ConsoleWrite("Пятница");
