@@ -20,8 +20,8 @@ else
             Console.Write($"{even}"); 
             if (even < N - 1) Console.Write(", ");
             else Console.Write(". \n");
-            even = even + 1;
+            
         }
-        else even = even + 1;
+        even++;
     }
 }
