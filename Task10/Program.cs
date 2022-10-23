@@ -10,18 +10,17 @@
 
 int FindSecondDigit(int num)
 {
-    if (num > 99 && num < 1000 || num < -99 && num > -1000) 
+    if (num / 1000 == 0)
     {
         num = (num / 10) % 10;
-        Console.Write($"Вторым числом является:  {num} \n");
+        return Math.Abs(num);
     }
-    else Console.WriteLine("Ввод неверен, введите целое трехзначное число");
-    return num;
+    else return num * 0;
 }
 
 Console.Write("Введите целое трехзначное число:");
 int digit = Convert.ToInt32(Console.ReadLine());
-FindSecondDigit(digit);
-
+int result = FindSecondDigit(digit);
+Console.WriteLine(result == 0? "Ошибка! Введите трехзначное число." : result);
 
 
