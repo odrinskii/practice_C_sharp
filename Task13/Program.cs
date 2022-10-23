@@ -8,7 +8,7 @@
 
 int GetNeededNumber(int num)
 {
-    if (num > 99 || num < -99)
+    if (num / 100 != 0)
     {
         while (num / 1000 != 0)
         {

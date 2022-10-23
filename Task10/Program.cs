@@ -10,7 +10,7 @@
 
 int FindSecondDigit(int num)
 {
-    if (num / 1000 == 0)
+    if (num / 100 != 0 && num / 1000 == 0)
     {
         num = (num / 10) % 10;
         return Math.Abs(num);
