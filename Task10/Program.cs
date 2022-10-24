@@ -15,12 +15,12 @@ int FindSecondDigit(int num)
         num = (num / 10) % 10;
         return Math.Abs(num);
     }
-    else return num * 0;
+    else return -1;
 }
 
 Console.Write("Введите целое трехзначное число:");
 int digit = Convert.ToInt32(Console.ReadLine());
 int result = FindSecondDigit(digit);
-Console.WriteLine(result == 0? "Ошибка! Введите трехзначное число." : result);
+Console.WriteLine(result == -1? "Ошибка! Введите трехзначное число." : result);
 
 

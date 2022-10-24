@@ -17,10 +17,10 @@ int GetNeededNumber(int num)
         num = num % 10;
         return Math.Abs(num);
     }
-    else return num * 0;
+    else return -1;
 }
 
 Console.Write("Введите целое число:");
 int digit = Convert.ToInt32(Console.ReadLine());
 int result = GetNeededNumber(digit);
-Console.WriteLine(result == 0 ? "Третьей цифры нет" : result);
+Console.WriteLine(result == -1 ? "Третьей цифры нет" : result);
