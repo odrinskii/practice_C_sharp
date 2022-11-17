@@ -4,13 +4,13 @@
 // Если N = 3 -> 0 1 1
 // Если N = 7 -> 0 1 1 2 3 5 8
 
-int[] Fibonacci(int num)
+int[] Fibonacci(int num) // решаем зажачу с помощью массива, метод берет на вход число
 {
-    int[] array = new int[num];
-    array[1] = 1;
-    for (int i = 2; i < num; i++)
+    int[] array = new int[num]; // задаем новый массив
+    for (int i = 0; i < num; i++)
     {
-        array[i] = array[i - 1] + array[i - 2];
+        if (i < 2) array[i] = i;
+        else array[i] = array[i - 1] + array[i - 2]; // формула фибоначчи
     }
     return array;
 }
