@@ -4,18 +4,18 @@
 
 // -1, -7, 567, 89, 223-> 3
 
-int[] FillArray(int num)
+double[] FillArray(int num)  // выбрал тип double, чтобы программа могла обработать и вещественные числа
 {
-    int[] array = new int[num];
+    double[] array = new double[num];
     for (int i = 0; i < array.Length; i++)
     {
-        Console.Write($"Введите {i+1} элемент: ");
-        array[i] = Convert.ToInt32(Console.ReadLine());
+        Console.Write($"Введите {i + 1} число: ");
+        array[i] = Convert.ToDouble(Console.ReadLine());
     }
     return array;
 }
 
-void PrintArray(int[] array)
+void PrintArray(double[] array)
 {
     for (int i = 0; i < array.Length; i++)
     {
@@ -26,21 +26,27 @@ void PrintArray(int[] array)
 }
 
 
-int MoreThanZero(int[] array)
+int MoreThanZero(double[] array)
 {
     int count = 0;
     for (int i = 0; i < array.Length; i++)
     {
-        if (array[i] > 0) count += 1; 
+        if (array[i] > 0) count += 1;
     }
     return count;
 }
 
-Console.WriteLine("Сколько чисел планируется ввести?");
-int quantity = Convert.ToInt32(Console.ReadLine());
 
-int[] array = FillArray(quantity);
-Console.Write("Введенные числа: ");
-PrintArray(array);
-int result = MoreThanZero(array);
-Console.WriteLine($"Среди введенных чисел {result} больше нуля.");
+
+Console.WriteLine("Сколько чисел планируется ввести?");
+double quantity = Convert.ToDouble(Console.ReadLine());
+// тип double выбран для возможности провести проверку на ввод вещественного числа
+if (quantity > 0 && (quantity * 10) % 10 == 0)
+{
+    double[] array = FillArray(Convert.ToInt32(quantity));
+    Console.Write("Введенные числа: ");
+    PrintArray(array);
+    int result = MoreThanZero(array);
+    Console.WriteLine($"Среди введенных чисел {result} больше нуля.");
+}
+else Console.WriteLine("Ошибка! Введите целое положительное число.");
