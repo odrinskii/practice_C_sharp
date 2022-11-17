@@ -40,7 +40,7 @@ int MoreThanZero(double[] array)
 
 Console.WriteLine("Сколько чисел планируется ввести?");
 double quantity = Convert.ToDouble(Console.ReadLine());
-// тип double выбран для возможности провести проверку на ввод вещественного числа
+// тип double выбран для возможности провести проверку на ввод вещественного числа, но почему-то пропускает 2,5. При этом 2.5 и прочие вещественные не пропускает
 if (quantity > 0 && (quantity * 10) % 10 == 0)
 {
     double[] array = FillArray(Convert.ToInt32(quantity));
