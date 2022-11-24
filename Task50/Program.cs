@@ -58,7 +58,11 @@ if (m > 0 && n > 0)
     Console.Write("Введите номер столбца искомой позиции: ");
     int c = Convert.ToInt32(Console.ReadLine());
 
-    if (r <= array2D.GetLength(0) && c <= array2D.GetLength(1))
+    if (r <= array2D.GetLength(0) 
+        && c <= array2D.GetLength(1)
+        && r >= 0
+        && c >= 0
+        )
     {
         double elem = FindElement(array2D, r, c);
         Console.WriteLine($"Элемент с позицией [{r}, {c}] равен {elem}");
