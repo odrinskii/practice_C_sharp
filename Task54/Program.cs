@@ -56,7 +56,7 @@ Console.Write("Введите количество столбцов: ");
 int n = Convert.ToInt32(Console.ReadLine());
 if (m > 0 && n > 0)
 {
-    int[,] array2D = CreateMatrixRndInt(m, n, 0, 20);
+    int[,] array2D = CreateMatrixRndInt(m, n, -20, 20);
     PrintMatrix(array2D);
     Console.WriteLine();
     MatrixRowSort(array2D);
