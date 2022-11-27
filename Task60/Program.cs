@@ -79,9 +79,10 @@ Console.Write("Введите ось Z: ");
 int z = Convert.ToInt32(Console.ReadLine());
 if (m > 0 && n > 0 && z > 0)
 {
-    if(m*n*z <= 89)
-    {int[] array1D = UniqueArray(89, 10, 99);
+    int[] array1D = UniqueArray(89, 10, 99);
     PrintArray(array1D);
+    if(m*n*z <= array1D.Length)
+    {
     int[,,] array3D = CreateMatrixRndInt(m, n, z, 10, 99, array1D);
     Console.WriteLine();
     Print3DMatrix(array3D);
