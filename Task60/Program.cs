@@ -38,6 +38,7 @@ int[,,] CreateMatrixRndInt(int rows, int columns, int depth, int min, int max, i
 {
     int[,,] matrix = new int[rows, columns, depth];
     Random rnd = new Random();
+    int l = default;
 
     for (int i = 0; i < matrix.GetLength(0); i++) 
     {
@@ -45,7 +46,10 @@ int[,,] CreateMatrixRndInt(int rows, int columns, int depth, int min, int max, i
         {
             for (int k = 0; k < matrix.GetLength(2); k++)
             {
-                matrix[i, j, k] = array[rnd.Next(0, array.Length - 1)];
+                matrix[i, j, k] = array[l];
+                // так как у нас одномерный массив состоит из уникальных чисел
+                //, можем заполнять наш трехмерный значениями из этого массива
+                l++;
             }
         }
     }
@@ -75,11 +79,14 @@ Console.Write("Введите ось Z: ");
 int z = Convert.ToInt32(Console.ReadLine());
 if (m > 0 && n > 0 && z > 0)
 {
-    int[] array1D = UniqueArray(89, 10, 99);
+    if(m*n*z <= 89)
+    {int[] array1D = UniqueArray(89, 10, 99);
     PrintArray(array1D);
     int[,,] array3D = CreateMatrixRndInt(m, n, z, 10, 99, array1D);
     Console.WriteLine();
     Print3DMatrix(array3D);
+    }
+    else Console.WriteLine("Ошибка! Количество элементов создаваемой матрицы больше кол-ва уникальных двухзначных чисел");
     
 }
 else Console.WriteLine("Ошибка! Введите целое положительное число для присвоения значений для осей массива.");
