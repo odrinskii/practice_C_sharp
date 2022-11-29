@@ -13,7 +13,7 @@ void NaturalNumbers(int num)
         return;  
     } 
     Console.Write($"{num},");  
-    NaturalNumbers(num - 1); // хвостовая рекурсия
+    NaturalNumbers(num - 1); 
 }
 
 

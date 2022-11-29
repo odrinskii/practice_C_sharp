@@ -13,7 +13,7 @@ int SumNumbersMtoN(int m, int n)
     else return n + SumNumbersMtoN(m - 1, n);
 }
 
-Console.WriteLine("Введите два числа друг за другом: ");
+Console.WriteLine("Введите два натуральных числа друг за другом: ");
 int a = Convert.ToInt32(Console.ReadLine());
 int b = Convert.ToInt32(Console.ReadLine());
 if (a >= 0 && b >= 0)
