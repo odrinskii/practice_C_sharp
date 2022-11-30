@@ -10,7 +10,7 @@ int SumNumbersMtoN(int m, int n)
 {
     if (m == n) return m;
     if (m < n) return m + SumNumbersMtoN(m + 1, n);
-    else return n + SumNumbersMtoN(m - 1, n);
+    else return m + SumNumbersMtoN(m - 1, n);
 }
 
 Console.WriteLine("Введите два натуральных числа друг за другом: ");
